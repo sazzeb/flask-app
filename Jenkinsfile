@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t $APP_NAME:$BUILD_NUMBER .'
+                sh 'docker build -t $APP_NAME:v1.RELEASE .'
             }
         }
         stage('login to dockerhub') {
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push $APP_NAME:$BUILD_NUMBER'
+                sh 'docker push $APP_NAME:V1.RELEASE'
             }
         }    
     }
