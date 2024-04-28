@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>IBT Restaurant</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/order">Place Order</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form method="post">
+            <label for="item">Select an item:</label>
+            <select name="item" id="item">
+                {% for item in menu_items %}
+                    <option value="{{ item.name }}">{{ item.name }} - {{ item.price }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 IBT Restaurant</p>
+    </footer>
+</body>
+</html>
+
