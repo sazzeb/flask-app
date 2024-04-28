@@ -27,7 +27,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push $APP_NAME:V1.RELEASE'
+                sh 'docker push $APP_NAME:v1.RELEASE'
             }
         }    
     }
