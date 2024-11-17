@@ -6,7 +6,7 @@ pipeline {
      }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('karo-dockerhub')
-    APP_NAME = "ooghenekaro/myflaskapp"
+    APP_NAME = "ooghenekaro/flask-guguru"
     }
     stages { 
         stage('SCM Checkout') {
