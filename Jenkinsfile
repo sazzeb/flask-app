@@ -5,13 +5,13 @@ pipeline {
         timeout(time: 10, unit: 'MINUTES')
      }
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('karo-dockerhub')
-    APP_NAME = "ooghenekaro/flask-guguru"
+    DOCKERHUB_CREDENTIALS = credentials('sam-docker-hub')
+    APP_NAME = "sazzeb/checklist-service"
     }
     stages { 
         stage('SCM Checkout') {
             steps{
-           git branch: 'main', url: 'https://github.com/ooghenekaro/flask-app.git'
+           git branch: 'main', url: 'https://github.com/sazzeb/flask-app.git'
             }
         }
 
