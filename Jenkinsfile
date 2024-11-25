@@ -11,7 +11,7 @@ pipeline {
     stages { 
         stage('SCM Checkout') {
             steps{
-           git branch: 'main', url: 'https://github.com/sazzeb/flask-app.git'
+           git branch: 'main', url: 'https://github.com/sazzeb/checklist-back.git'
             }
         }
 
